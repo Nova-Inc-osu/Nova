@@ -7,37 +7,42 @@
 //
 
 import UIKit
-//import FirebaseAuth
+import FirebaseAuth
 
 class RegistrationViewController: UIViewController {
         
-    @IBOutlet weak var createAccountButton: UIButton!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var therapistLoginButton: UIButton!
     @IBOutlet weak var patientLoginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
-        @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     
-
-
-    @IBAction func createAccountButtonTapped(_ sender: Any) {
-        configureVCForNewAccountForm()
-        createAccountButton.isHidden = false
-    }
-    
-    @IBAction func forgotPasswordButtonTapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func signUpButtonTapped(_ sender: Any) {
-        
-    }
     
     @IBAction func patientLoginButtonTapped(_ sender: UIButton) {
-        navigateToMessagesVC()
         
+        guard let password = passwordTextField.text else {
+            showAlert(message: "Please enter a password.")
+            return
+        }
+        
+        guard let username = usernameTextField.text else {
+            showAlert(message: "Please enter a username.")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: username, password: password) { (user, error) in
+           if error == nil {
+             self.navigateToMessagesVC()
+            }
+            else {
+             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            
+              alertController.addAction(defaultAction)
+              self.present(alertController, animated: true, completion: nil)
+            }
+        }
+                
     }
-    
     
     
     @IBAction func therapistLoginButtonTapped(_ sender: UIButton) {
@@ -55,9 +60,6 @@ class RegistrationViewController: UIViewController {
     }
     
     func configureVC() {
-        createAccountButton.isHidden = true
-        createAccountButton.layer.cornerRadius = 5
-        signUpButton.layer.cornerRadius = 5
         patientLoginButton.layer.cornerRadius = 5
         therapistLoginButton.layer.cornerRadius = 5
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 245/255.0, green: 94/255.0, blue: 97/255.0, alpha: 2.0)
@@ -65,13 +67,6 @@ class RegistrationViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
-    }
-    
-    func configureVCForNewAccountForm() {
-        forgotPasswordButton.isHidden = true
-        therapistLoginButton.isHidden = true
-        patientLoginButton.isHidden = true
-        signUpButton.isHidden = true
     }
     
     /**
@@ -97,6 +92,15 @@ class RegistrationViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: PatientListViewController())
         present(navigationController, animated: false, completion: nil)
     }
+    
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message , preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
 
 
 }
