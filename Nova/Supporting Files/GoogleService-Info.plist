@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>662932631930-dgrm895c8b2lsdg8j9tggcmlg2m640u1.apps.googleusercontent.com</string>
+	<string>843193326980-7guv6bri0923isrldc6jj3kosvidjs6l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.662932631930-dgrm895c8b2lsdg8j9tggcmlg2m640u1</string>
+	<string>com.googleusercontent.apps.843193326980-7guv6bri0923isrldc6jj3kosvidjs6l</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC5l8m0osCjx-sQ0gD4zybniLLxxMdoXlU</string>
+	<string>AIzaSyCJvrEF1EZj5rZzoj-LYHvq7EwxFgqC1mY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>662932631930</string>
+	<string>843193326980</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>silvanagarcia.Nova</string>
 	<key>PROJECT_ID</key>
-	<string>nova-c6aef</string>
+	<string>nova-1f814</string>
 	<key>STORAGE_BUCKET</key>
-	<string>nova-c6aef.appspot.com</string>
+	<string>nova-1f814.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:662932631930:ios:ac8d404ce1c2bcff</string>
+	<string>1:843193326980:ios:04466ce1e1716523c691d1</string>
 	<key>DATABASE_URL</key>
-	<string>https://nova-c6aef.firebaseio.com</string>
+	<string>https://nova-1f814.firebaseio.com</string>
 </dict>
 </plist>

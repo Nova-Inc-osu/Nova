@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B15A9F20231F088A005EEDC4 /* PatientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15A9F1E231F088A005EEDC4 /* PatientListViewController.swift */; };
 		B15A9F21231F088A005EEDC4 /* PatientListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15A9F1F231F088A005EEDC4 /* PatientListViewController.xib */; };
+		B17E676E235E6B3B00E8EDAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17E676D235E6B3B00E8EDAF /* GoogleService-Info.plist */; };
 		B1832585231F22DC00EE0A6A /* PatientProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1832583231F22DC00EE0A6A /* PatientProfileViewController.swift */; };
 		B1832586231F22DC00EE0A6A /* PatientProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1832584231F22DC00EE0A6A /* PatientProfileViewController.xib */; };
 		B1E813FC231892E600219768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E813FB231892E600219768 /* AppDelegate.swift */; };
@@ -18,9 +19,6 @@
 		B1E81406231892E800219768 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E81404231892E800219768 /* LaunchScreen.storyboard */; };
 		B1E81411231892E800219768 /* NovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E81410231892E800219768 /* NovaTests.swift */; };
 		B1E8141C231892E800219768 /* NovaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8141B231892E800219768 /* NovaUITests.swift */; };
-		B1E814382318A63700219768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1E814372318A63700219768 /* GoogleService-Info.plist */; };
-		B1E814392318A63700219768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1E814372318A63700219768 /* GoogleService-Info.plist */; };
-		B1E8143A2318A63700219768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1E814372318A63700219768 /* GoogleService-Info.plist */; };
 		B1E8143D2318AB2900219768 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8143B2318AB2900219768 /* RegistrationViewController.swift */; };
 		B1E8143E2318AB2900219768 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1E8143C2318AB2900219768 /* RegistrationViewController.xib */; };
 		B1E814412318B6FA00219768 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8143F2318B6FA00219768 /* ChatViewController.swift */; };
@@ -58,6 +56,7 @@
 		A6A64939511B8B8B9047B23E /* Pods-NovaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NovaUITests.debug.xcconfig"; path = "Target Support Files/Pods-NovaUITests/Pods-NovaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15A9F1E231F088A005EEDC4 /* PatientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientListViewController.swift; sourceTree = "<group>"; };
 		B15A9F1F231F088A005EEDC4 /* PatientListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientListViewController.xib; sourceTree = "<group>"; };
+		B17E676D235E6B3B00E8EDAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1832583231F22DC00EE0A6A /* PatientProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientProfileViewController.swift; sourceTree = "<group>"; };
 		B1832584231F22DC00EE0A6A /* PatientProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientProfileViewController.xib; sourceTree = "<group>"; };
 		B1E813F8231892E600219768 /* Nova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nova.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +72,6 @@
 		B1E81417231892E800219768 /* NovaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E8141B231892E800219768 /* NovaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaUITests.swift; sourceTree = "<group>"; };
 		B1E8141D231892E800219768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1E814372318A63700219768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1E8143B2318AB2900219768 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B1E8143C2318AB2900219768 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		B1E8143F2318B6FA00219768 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +236,7 @@
 		B1E8142C2318942100219768 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B1E814372318A63700219768 /* GoogleService-Info.plist */,
+				B17E676D235E6B3B00E8EDAF /* GoogleService-Info.plist */,
 				B1E81407231892E800219768 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -394,11 +392,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1E81406231892E800219768 /* LaunchScreen.storyboard in Resources */,
+				B17E676E235E6B3B00E8EDAF /* GoogleService-Info.plist in Resources */,
 				B1E81403231892E800219768 /* Assets.xcassets in Resources */,
 				B15A9F21231F088A005EEDC4 /* PatientListViewController.xib in Resources */,
 				B1E814422318B6FA00219768 /* ChatViewController.xib in Resources */,
 				B1832586231F22DC00EE0A6A /* PatientProfileViewController.xib in Resources */,
-				B1E814382318A63700219768 /* GoogleService-Info.plist in Resources */,
 				B1E8143E2318AB2900219768 /* RegistrationViewController.xib in Resources */,
 				B1E81401231892E600219768 /* Main.storyboard in Resources */,
 			);
@@ -408,7 +406,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E814392318A63700219768 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +413,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E8143A2318A63700219768 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

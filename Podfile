@@ -3,6 +3,9 @@
 
 def general_pods
   pod 'MessageKit', '1.0.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 end
 
 

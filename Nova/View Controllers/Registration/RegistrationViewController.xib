@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="Nova" customModuleProvider="target">
             <connections>
-                <outlet property="loginPatientButton" destination="EEw-I9-uBt" id="rIg-B2-cFn"/>
-                <outlet property="loginTherapistButton" destination="UpX-8y-6Qb" id="fsx-RM-Abi"/>
+                <outlet property="createAccountButton" destination="MNx-V4-y1P" id="4YC-6t-5pw"/>
+                <outlet property="forgotPasswordButton" destination="ZER-ya-HQa" id="2em-uQ-dya"/>
                 <outlet property="passwordTextField" destination="QBP-jE-ard" id="rD7-Ih-TR9"/>
-                <outlet property="usernameTextField" destination="fTA-0o-eBE" id="1r8-zn-kGw"/>
+                <outlet property="patientLoginButton" destination="UpX-8y-6Qb" id="1KW-hn-hkL"/>
+                <outlet property="signUpButton" destination="4aE-G4-DOv" id="RDI-T2-KLp"/>
+                <outlet property="therapistLoginButton" destination="EEw-I9-uBt" id="skd-Z7-hd7"/>
+                <outlet property="usernameTextField" destination="fTA-0o-eBE" id="OwH-D9-s8a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,50 +25,94 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBP-jE-ard">
-                    <rect key="frame" x="50" y="448" width="314" height="30"/>
-                    <nil key="textColor"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBP-jE-ard">
+                    <rect key="frame" x="50" y="450" width="314" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTA-0o-eBE">
-                    <rect key="frame" x="50" y="403" width="314" height="30"/>
-                    <nil key="textColor"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTA-0o-eBE">
+                    <rect key="frame" x="50" y="401" width="314" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEw-I9-uBt" userLabel="Login Patient Button">
-                    <rect key="frame" x="132" y="498" width="150" height="31"/>
-                    <color key="backgroundColor" red="1" green="0.92785662273768021" blue="0.85047055370103086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="QiG-ZR-p9S"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
-                    <state key="normal" title="Therapist Login">
-                        <color key="titleColor" red="0.0098901915129999997" green="0.021150286559999999" blue="0.097596763959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="therapistLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="RdF-aU-Ym8"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-vL-tue">
-                    <rect key="frame" x="139.5" y="297" width="135" height="66"/>
+                    <rect key="frame" x="139.5" y="295" width="135" height="66"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="55"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-8y-6Qb" userLabel="Login Therapist Button">
-                    <rect key="frame" x="132" y="549" width="150" height="31"/>
-                    <color key="backgroundColor" red="1" green="0.92785662270000002" blue="0.85047055370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEw-I9-uBt" userLabel="therapist Login Button">
+                    <rect key="frame" x="50" y="555" width="150" height="31"/>
+                    <color key="backgroundColor" red="0.32955685379999999" green="0.7542631662" blue="0.65524967239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="QiG-ZR-p9S"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <state key="normal" title="Therapist Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="therapistLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="1FI-zp-s4W"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZER-ya-HQa" userLabel="Forgot Password Button">
+                    <rect key="frame" x="132" y="504" width="150" height="31"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="DiI-PC-2uX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <state key="normal" title="Forgot Password?">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="forgotPasswordButtonTapped:" destination="-1" eventType="touchUpInside" id="peS-EF-uHN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-8y-6Qb" userLabel="patient Login Button">
+                    <rect key="frame" x="214" y="555" width="150" height="32"/>
+                    <color key="backgroundColor" red="0.32955685379418498" green="0.75426316624365486" blue="0.65524967235393994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="nqO-hW-IwM"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Patient Login">
-                        <color key="titleColor" red="0.0098901915129999997" green="0.021150286559999999" blue="0.097596763959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="patientLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="BU7-fg-6sY"/>
+                        <action selector="patientLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="21W-Xf-ooE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aE-G4-DOv" userLabel="sign Up Button">
+                    <rect key="frame" x="57" y="807" width="300" height="35"/>
+                    <color key="backgroundColor" red="0.41224736043923121" green="0.63047599662386034" blue="0.7542631662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="Fgn-wn-W6g"/>
+                        <constraint firstAttribute="height" constant="35" id="LN7-IV-ioZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <state key="normal" title="No account? Sign up">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="createAccountButtonTapped:" destination="-1" eventType="touchUpInside" id="od6-ZP-h4y"/>
+                        <action selector="signUpButtonTapped:" destination="-1" eventType="touchUpInside" id="pJr-JS-YeI"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-V4-y1P" userLabel="create Account Button">
+                    <rect key="frame" x="57" y="732" width="300" height="35"/>
+                    <color key="backgroundColor" red="0.32955685379999999" green="0.7542631662" blue="0.65524967239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="8hf-m6-O0M"/>
+                        <constraint firstAttribute="width" constant="300" id="aHU-Y4-WLR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                    <state key="normal" title="Create Account">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="createAccountButtonTapped:" destination="-1" eventType="touchUpInside" id="kFe-04-3Uh"/>
                     </connections>
                 </button>
             </subviews>
@@ -75,18 +120,25 @@
             <constraints>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4bu-Yu-PDj"/>
                 <constraint firstItem="QBP-jE-ard" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ADQ-1V-6ag"/>
+                <constraint firstItem="EEw-I9-uBt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="ADX-OZ-REV"/>
+                <constraint firstItem="UpX-8y-6Qb" firstAttribute="top" secondItem="ZER-ya-HQa" secondAttribute="bottom" constant="20" id="ANb-e4-4aR"/>
                 <constraint firstItem="QBP-jE-ard" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="DVE-51-pVK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4aE-G4-DOv" secondAttribute="bottom" constant="20" id="Dnf-oU-7Sp"/>
+                <constraint firstItem="4aE-G4-DOv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FCk-pc-YD0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UpX-8y-6Qb" secondAttribute="trailing" constant="50" id="Lcy-8H-uup"/>
+                <constraint firstItem="4aE-G4-DOv" firstAttribute="top" secondItem="MNx-V4-y1P" secondAttribute="bottom" constant="40" id="N2E-1L-rpH"/>
+                <constraint firstItem="MNx-V4-y1P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PCA-rb-J4M"/>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Rnz-AZ-A60"/>
-                <constraint firstItem="UpX-8y-6Qb" firstAttribute="top" secondItem="EEw-I9-uBt" secondAttribute="bottom" constant="20" id="SBn-79-PMp"/>
+                <constraint firstItem="ZER-ya-HQa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U8F-WH-h6G"/>
+                <constraint firstItem="EEw-I9-uBt" firstAttribute="top" secondItem="ZER-ya-HQa" secondAttribute="bottom" constant="20" id="Udz-Jo-ThK"/>
+                <constraint firstItem="ZER-ya-HQa" firstAttribute="top" secondItem="QBP-jE-ard" secondAttribute="bottom" constant="20" id="Whm-o3-QAs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fTA-0o-eBE" secondAttribute="trailing" constant="50" id="a9t-ns-EnS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QBP-jE-ard" secondAttribute="trailing" constant="50" id="bzk-lK-WUQ"/>
+                <constraint firstItem="UpX-8y-6Qb" firstAttribute="leading" secondItem="EEw-I9-uBt" secondAttribute="trailing" constant="14" id="lpH-qE-zSH"/>
                 <constraint firstItem="QBP-jE-ard" firstAttribute="top" secondItem="fTA-0o-eBE" secondAttribute="bottom" constant="15" id="m5o-08-lVB"/>
-                <constraint firstItem="EEw-I9-uBt" firstAttribute="top" secondItem="QBP-jE-ard" secondAttribute="bottom" constant="20" id="oKm-rr-tzw"/>
-                <constraint firstItem="EEw-I9-uBt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ssd-yw-Jv6"/>
                 <constraint firstItem="dYA-vL-tue" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w1v-m7-wWO"/>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-30" id="wSl-rI-z7z"/>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="top" secondItem="dYA-vL-tue" secondAttribute="bottom" constant="40" id="xei-VZ-xf8"/>
-                <constraint firstItem="UpX-8y-6Qb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yBQ-4Z-sGb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
