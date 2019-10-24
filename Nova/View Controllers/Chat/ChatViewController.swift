@@ -7,6 +7,7 @@
 //
 import UIKit
 import MessageKit
+import FirebaseAuth
 
 class ChatViewController: MessagesViewController {
     var messages: [Message] = []
@@ -50,13 +51,21 @@ class ChatViewController: MessagesViewController {
     }
     
     func configureVC() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Go Back", style: .plain, target: self, action: #selector(navigateToMenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(navigateToMenu))
     }
     
     /**
      Go bac to menu
      */
     @objc func navigateToMenu() {
+        
+        do {
+               try Auth.auth().signOut()
+           }
+        catch let signOutError as NSError {
+               print ("Error signing out: %@", signOutError)
+           }
+        
         let navigationController = UINavigationController(rootViewController: RegistrationViewController())
         present(navigationController, animated: false, completion: nil)
     }

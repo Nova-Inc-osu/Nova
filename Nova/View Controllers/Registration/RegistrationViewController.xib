@@ -10,9 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="Nova" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="EEw-I9-uBt" id="skd-Z7-hd7"/>
                 <outlet property="passwordTextField" destination="QBP-jE-ard" id="rD7-Ih-TR9"/>
-                <outlet property="patientLoginButton" destination="UpX-8y-6Qb" id="1KW-hn-hkL"/>
-                <outlet property="therapistLoginButton" destination="EEw-I9-uBt" id="skd-Z7-hd7"/>
                 <outlet property="usernameTextField" destination="fTA-0o-eBE" id="OwH-D9-s8a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -39,32 +38,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEw-I9-uBt" userLabel="therapist Login Button">
-                    <rect key="frame" x="50" y="514" width="150" height="31"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="132" y="514" width="150" height="31"/>
+                    <color key="backgroundColor" red="0.32955685379999999" green="0.7542631662" blue="0.65524967239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="QiG-ZR-p9S"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                    <state key="normal" title="Therapist Login">
+                    <state key="normal" title="Login">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="therapistLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="1FI-zp-s4W"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpX-8y-6Qb" userLabel="patient Login Button">
-                    <rect key="frame" x="214" y="514" width="150" height="32"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="nqO-hW-IwM"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Patient Login">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="patientLoginButtonTapped:" destination="-1" eventType="touchUpInside" id="21W-Xf-ooE"/>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="1FI-zp-s4W"/>
                     </connections>
                 </button>
             </subviews>
@@ -72,14 +56,12 @@
             <constraints>
                 <constraint firstItem="EEw-I9-uBt" firstAttribute="top" secondItem="QBP-jE-ard" secondAttribute="bottom" constant="30" id="4Uc-wC-Evt"/>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4bu-Yu-PDj"/>
-                <constraint firstItem="UpX-8y-6Qb" firstAttribute="top" secondItem="QBP-jE-ard" secondAttribute="bottom" constant="30" id="8Oi-AU-FO0"/>
                 <constraint firstItem="QBP-jE-ard" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ADQ-1V-6ag"/>
-                <constraint firstItem="EEw-I9-uBt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="ADX-OZ-REV"/>
                 <constraint firstItem="QBP-jE-ard" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="DVE-51-pVK"/>
+                <constraint firstItem="EEw-I9-uBt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kkv-vr-KSF"/>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Rnz-AZ-A60"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fTA-0o-eBE" secondAttribute="trailing" constant="50" id="a9t-ns-EnS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QBP-jE-ard" secondAttribute="trailing" constant="50" id="bzk-lK-WUQ"/>
-                <constraint firstItem="UpX-8y-6Qb" firstAttribute="leading" secondItem="EEw-I9-uBt" secondAttribute="trailing" constant="14" id="lpH-qE-zSH"/>
                 <constraint firstItem="QBP-jE-ard" firstAttribute="top" secondItem="fTA-0o-eBE" secondAttribute="bottom" constant="15" id="m5o-08-lVB"/>
                 <constraint firstItem="dYA-vL-tue" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w1v-m7-wWO"/>
                 <constraint firstItem="fTA-0o-eBE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-30" id="wSl-rI-z7z"/>

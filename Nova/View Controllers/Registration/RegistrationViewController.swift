@@ -11,13 +11,12 @@ import FirebaseAuth
 
 class RegistrationViewController: UIViewController {
         
-    @IBOutlet weak var therapistLoginButton: UIButton!
-    @IBOutlet weak var patientLoginButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    
-    
-    @IBAction func patientLoginButtonTapped(_ sender: UIButton) {
+
+
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
         
         guard let password = passwordTextField.text else {
             showAlert(message: "Please enter a password.")
@@ -31,22 +30,24 @@ class RegistrationViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: username, password: password) { (user, error) in
            if error == nil {
-             self.navigateToMessagesVC()
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    let email = user.email
+                    if email?.isPatient ?? false {
+                        self.navigateToMessagesVC()
+                    } else {
+                        self.navigateToPatientListVC()
+                    }
+                }
             }
             else {
-             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                             
-              alertController.addAction(defaultAction)
-              self.present(alertController, animated: true, completion: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
-                
-    }
-    
-    
-    @IBAction func therapistLoginButtonTapped(_ sender: UIButton) {
-        navigateToPatientListVC()
     }
     
     
@@ -60,8 +61,7 @@ class RegistrationViewController: UIViewController {
     }
     
     func configureVC() {
-        patientLoginButton.layer.cornerRadius = 5
-        therapistLoginButton.layer.cornerRadius = 5
+        loginButton.layer.cornerRadius = 5
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 245/255.0, green: 94/255.0, blue: 97/255.0, alpha: 2.0)
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         self.navigationController?.navigationBar.isTranslucent = false
@@ -100,7 +100,10 @@ class RegistrationViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-    
+}
 
-
+extension String {
+    var isPatient: Bool {
+        return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[patient]+\\.[A-Za-z]{2,}").evaluate(with: self)
+    }
 }
