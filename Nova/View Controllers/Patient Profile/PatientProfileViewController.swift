@@ -16,7 +16,7 @@ class PatientProfileViewController: UIViewController {
 //    @IBOutlet weak var patientDataButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    @IBOutlet weak var _lineChartView: LineChartView!
+    @IBOutlet weak var bubbleChartView: BubbleChartView!
     
     @IBOutlet weak var _tableView: UITableView!
     
@@ -89,24 +89,53 @@ class PatientProfileViewController: UIViewController {
     func loadAndRenderAnxietyChart() {
         let anxietyValues = [4, 7, 3, 9, 1, 3, 10].sorted().reversed()
         
+        var yVals1 = [BubbleChartDataEntry]()
+        var yVals2 = [BubbleChartDataEntry]()
+        var yVals3 = [BubbleChartDataEntry]()
+        
         BackendService.shared.getAnxiety(forPatientId: patientId, completion: {CHANGE_TO_anxiety_values in
             
             var i = 0
             let chartDataEntries : [ChartDataEntry] = CHANGE_TO_anxiety_values.compactMap({ val in
-                let entry = ChartDataEntry(x: Double(i), y: Double(val))
+                let entry = ChartDataEntry(x: Double(i), y: Double(val[0]))
                 i = i + 1 // i++ was blocked by compiler
+                
+                var anxMinus1 = BubbleChartDataEntry(x: Double(i), y: -1, size: CGFloat(val[0]), icon: UIImage(named: "icon"))
+                var anxMinus2 = BubbleChartDataEntry(x: Double(i), y: 0, size: CGFloat(val[1]), icon: UIImage(named: "icon"))
+                var anxMinus3 = BubbleChartDataEntry(x: Double(i), y: 1, size: CGFloat(val[2]), icon: UIImage(named: "icon"))
+                yVals1.append(anxMinus1)
+                yVals2.append(anxMinus2)
+                yVals3.append(anxMinus3)
+                
+                
                 return entry
             })
             
-            let line1 = LineChartDataSet(entries: chartDataEntries, label: "Anxiety")
             
-            line1.colors = [UIColor.blue]
+            let set1 = BubbleChartDataSet(entries: yVals1, label: "Negative")
+            set1.drawIconsEnabled = false
+            set1.setColor(ChartColorTemplates.colorful()[0], alpha: 0.5)
+            set1.drawValuesEnabled = true
             
-            let data = LineChartData()
-            data.addDataSet(line1)
+            let set2 = BubbleChartDataSet(entries: yVals2, label: "Neutral")
+            set2.drawIconsEnabled = false
+            set2.iconsOffset = CGPoint(x: 0, y: 15)
+            set2.setColor(ChartColorTemplates.colorful()[1], alpha: 0.5)
+            set2.drawValuesEnabled = true
             
-            self._lineChartView.data = data
-            self._lineChartView.chartDescription?.text = "Anxiety"
+            let set3 = BubbleChartDataSet(entries: yVals3, label: "Positive")
+            set3.setColor(ChartColorTemplates.colorful()[2], alpha: 0.5)
+            set3.drawValuesEnabled = true
+            
+            let data = BubbleChartData(dataSets: [set1, set2, set3])
+            data.setDrawValues(false)
+            data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 7)!)
+            data.setHighlightCircleWidth(1.5)
+            data.setValueTextColor(.white)
+            
+            self.bubbleChartView.data = data
+            self.bubbleChartView.chartDescription?.text = "Mood"
+            self.bubbleChartView.backgroundColor = .white
         })
         
 

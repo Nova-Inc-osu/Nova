@@ -101,7 +101,7 @@ class BackendService {
         })
     }
     
-    func getAnxiety(forPatientId: Int, completion: @escaping (_ result: [Double])->()) {
+    func getAnxiety(forPatientId: Int, completion: @escaping (_ result: [[Double]])->()) {
 //        request(baseUrl + "/anxiety/1").responseSwiftyJSON {dataResponse in
 //
 //            if let anxietyValues = (dataResponse.result.value?["data"].arrayValue.map {$0.intValue}) {
@@ -112,16 +112,23 @@ class BackendService {
 //
 //        }
         getConversations(forPatientId: forPatientId, completion: {conversations in
-            let anxietyValues : [Double] = conversations.map({convo in
+            let anxietyValues : [[Double]] = conversations.map({convo in
                 let anxVal : [Double] = convo.messages.map({$0.analysisValue})
                 
-                var total: Double = 0.0
+                var minusOneCount = 0.0
+                var oneCount = 0.0
+                var zeroCount = 0.0
                 
                 for a in anxVal {
-                    total += a
+                    if a == 0.0 {
+                        zeroCount += 1
+                    } else if a == 1.0 {
+                        oneCount += 1
+                    } else {
+                       minusOneCount += 1
+                    }
                 }
-                
-                return total / Double(anxVal.count)
+                return [minusOneCount,zeroCount,oneCount]
             })
             
             completion(anxietyValues)
