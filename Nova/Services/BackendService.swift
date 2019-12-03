@@ -115,7 +115,6 @@ class BackendService {
             let anxietyValues : [[Double]] = conversations.map({convo in
                 let anxVal : [Double] = convo.messages.map({$0.analysisValue})
                 
-                var total: Double = 0.0
                 var minusOneCount = 0.0
                 var oneCount = 0.0
                 var zeroCount = 0.0
